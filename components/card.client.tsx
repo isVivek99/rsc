@@ -14,3 +14,8 @@ export default function Card({ title, description, date }: CardType) {
     </div>
   );
 }
+
+/*
+Card is a CSR component, since we have used the directive for client.
+client components can have a state and click handlers wheras server components cannot have that  
+*/
