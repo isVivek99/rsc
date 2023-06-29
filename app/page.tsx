@@ -1,12 +1,13 @@
 import Card from "@component/components/card.client";
 import styles from "./page.module.css";
+import DisplayDate from "@component/components/date";
 
 const getBlogData = () => {
   return [
     {
       title: "Blog post RSC",
       description: "Covers RSC in depth",
-      formattedDate: "1999",
+      formattedDate: "1920-01-01",
     },
   ];
 };
@@ -21,12 +22,10 @@ export default function Home() {
   return (
     <main className={styles.main}>
       {data.map(({ title, description, formattedDate }, idx) => (
-        <Card
-          key={idx}
-          title={title}
-          description={description}
-          date={formattedDate}
-        />
+        <div key={idx}>
+          <Card title={title} description={description} date={formattedDate} />
+          <DisplayDate dateString={formattedDate} />
+        </div>
       ))}
     </main>
   );
